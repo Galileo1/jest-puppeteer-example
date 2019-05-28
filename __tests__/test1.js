@@ -1,4 +1,5 @@
 const timeout = 5000
+import {yellow} from 'chalk';
 
 describe(
   '/ (Home Page)',
@@ -15,6 +16,7 @@ describe(
 
     it('should load without error', async () => {
       let text = await page.evaluate(() => document.body.textContent)
+      console.log(yellow('Running test1'))
       expect(text).toContain('google')
     })
   },
